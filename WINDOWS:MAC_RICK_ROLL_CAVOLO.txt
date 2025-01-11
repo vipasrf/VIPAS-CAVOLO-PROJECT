@@ -1,0 +1,108 @@
+WINDOWS:
+#include <Keyboard.h>
+
+void setup() {
+  // put your setup code here, to run once:
+  Keyboard.begin();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  delay(3000);
+  Keyboard.press(KEY_LEFT_GUI);
+  delay(500);
+  Keyboard.press('d');
+  Keyboard.releaseAll();
+
+  delay(500);
+  Keyboard.press(KEY_LEFT_GUI);
+  delay(500);
+  Keyboard.press('r');
+  Keyboard.releaseAll();
+
+  delay(500);
+  Keyboard.print("cmd");
+  Keyboard.press(KEY_RETURN);
+  Keyboard.releaseAll();
+  delay(500);
+
+  Keyboard.print("start ");
+  delay(50);
+  Keyboard.print('"');
+  delay(50);
+  Keyboard.print('"');
+  delay(50);
+  Keyboard.print(' ');
+  delay(50);
+  Keyboard.print('"');
+  delay(50);
+  Keyboard.print("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  delay(50);
+  Keyboard.print('"');
+  Keyboard.press(KEY_RETURN);
+  Keyboard.releaseAll();
+  delay(1000000);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAC:
+#include <Keyboard.h>
+
+void setup() {
+  // Start the Keyboard emulation
+  Keyboard.begin();
+}
+
+void loop() {
+  delay(3000); // Wait for 3 seconds before starting
+
+  // Simulate pressing Command + D (Mac equivalent to Win + D doesn't exist)
+  Keyboard.press(KEY_LEFT_GUI); // Command key on macOS
+  Keyboard.press('h');          // 'h' minimizes windows in macOS
+  delay(500);
+  Keyboard.releaseAll();
+
+  delay(500);
+
+  // Simulate pressing Command + Space to open Spotlight
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press(' ');
+  delay(500);
+  Keyboard.releaseAll();
+
+  delay(500);
+
+  // Type "Terminal" to open it via Spotlight
+  Keyboard.print("Terminal");
+  delay(500);
+  Keyboard.press(KEY_RETURN); // Press Enter to open Terminal
+  Keyboard.releaseAll();
+
+  delay(2000); // Wait for Terminal to open
+
+  // Type the command to open a URL in the default browser
+  Keyboard.print("open ");
+  delay(50);
+  Keyboard.print('"');
+  delay(50);
+  Keyboard.print("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  delay(50);
+  Keyboard.print('"');
+  Keyboard.press(KEY_RETURN); // Press Enter to execute the command
+  Keyboard.releaseAll();
+
+  delay(1000000); // Pause indefinitely
+}

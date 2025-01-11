@@ -1,0 +1,101 @@
+MAC:
+#include <Keyboard.h>
+
+void setup() {
+  // Start the Keyboard emulation
+  Keyboard.begin();
+}
+
+void loop() {
+  delay(3000); // Wait 3 seconds before executing
+
+  // Open Spotlight Search (Command + Space)
+  Keyboard.press(KEY_LEFT_GUI); // Command key
+  Keyboard.press(' ');
+  delay(500);
+  Keyboard.releaseAll();
+
+  delay(500);
+
+  // Type "TextEdit" and press Enter
+  Keyboard.print("TextEdit");
+  delay(500);
+  Keyboard.press(KEY_RETURN);
+  Keyboard.releaseAll();
+
+  delay(2000); // Wait for TextEdit to open
+
+  // Open a new document (Command + N)
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('n');
+  delay(500);
+  Keyboard.releaseAll();
+
+  delay(1000); // Wait for the new document to appear
+
+  // Type the definition of a BadUSB
+  Keyboard.print("BadUSB is a malicious device disguised as a regular USB drive. ");
+  delay(50);
+  Keyboard.print("It exploits the USB firmware to execute unauthorized actions, ");
+  delay(50);
+  Keyboard.print("such as injecting keystrokes, stealing data, or installing malware.");
+  delay(50);
+
+  while (true) {
+    // Halt further execution
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WINDOWS: 
+#include <Keyboard.h>
+
+void setup() {
+  // Start the Keyboard emulation
+  Keyboard.begin();
+}
+
+void loop() {
+  delay(3000); // Wait 3 seconds before executing
+
+  // Open Run Dialog (Windows + R)
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('r');
+  delay(500);
+  Keyboard.releaseAll();
+
+  delay(500);
+
+  // Type "notepad" and press Enter
+  Keyboard.print("notepad");
+  delay(500);
+  Keyboard.press(KEY_RETURN);
+  Keyboard.releaseAll();
+
+  delay(2000); // Wait for Notepad to open
+
+  // Type the definition of a BadUSB
+  Keyboard.print("BadUSB is a malicious device disguised as a regular USB drive. ");
+  delay(50);
+  Keyboard.print("It exploits the USB firmware to execute unauthorized actions, ");
+  delay(50);
+  Keyboard.print("such as injecting keystrokes, stealing data, or installing malware.");
+  delay(50);
+
+  while (true) {
+    // Halt further execution
+  }
+}
+
